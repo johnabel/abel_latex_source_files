@@ -1,0 +1,64 @@
+\documentclass[11pt, letterpaper]{article}
+\usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}
+
+% Math, graphics, and bibliography
+\usepackage{amsmath,amssymb,amsfonts,mathrsfs,mathtools}
+
+% My preferred fonts
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[sc]{mathpazo}
+\usepackage{textcomp}
+
+\usepackage{color}
+\usepackage{tcolorbox}
+\tcbuselibrary{breakable}
+\tcbuselibrary{skins}
+\usepackage{units}
+
+\usepackage{cite}
+\usepackage{xcite} % set up external citations
+\usepackage{xr}
+\externalcitedocument{}
+
+\usepackage[parfill]{parskip} % For block paragraphs
+
+\definecolor{gray}{gray}{0.4}
+\newenvironment{reviewer}{\itshape\color{gray}}{}
+
+\tcbset{skin=enhanced}
+
+\newenvironment{manuscript}[1]{\begin{center}\begin{tcolorbox}[colback=green!5!white,colframe=green!75!black,width=0.8\textwidth,title={#1},breakable,fonttitle=\bfseries]}{\end{tcolorbox}\end{center}}
+
+\newenvironment{todo}[1]{\begin{center}\begin{tcolorbox}[colback=red!5!white,colframe=red!75!black,width=0.8\textwidth,title={#1},breakable,fonttitle=\bfseries]}{\end{tcolorbox}\end{center}}
+
+
+\begin{document}
+\today\\
+
+{\itshape Name}\\
+Affil\\
+University\\
+Location\\
+
+
+Dear Editor,
+
+Please find enclosed our manuscript, entitled ``,'' which we are submitting for consideration as a regular article in Journal.
+
+[Why this paper is worth considering.]
+
+For your convenience, we have also enclosed a list of suggested reviewers for this work, and we confirm that it has not been submitted elsewhere.
+Thank you for your consideration.
+
+\hspace*{4.in}Sincerely,\\ [\medskipamount]
+%\hspace*{4.in}\includegraphics[height=0.4cm]{signature.pdf}\\[\medskipamount]
+\hspace*{4.in}Name\\
+
+
+\clearpage
+
+\begin{enumerate}
+    \item Reviewer\\Affil\\University\\email@email.edu
+\end{enumerate}
+\end{document}

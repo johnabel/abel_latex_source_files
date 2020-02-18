@@ -1,0 +1,81 @@
+\documentclass[11pt, letterpaper]{article}
+\usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}
+
+% Math, graphics, and bibliography
+\usepackage{amsmath,amssymb,amsfonts,mathrsfs,mathtools}
+
+% My preferred fonts
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[sc]{mathpazo}
+\usepackage{textcomp}
+
+\usepackage{color}
+\usepackage{tcolorbox}
+\tcbuselibrary{breakable}
+\tcbuselibrary{skins}
+\usepackage{units}
+
+
+% if you want citations within the paper to work, create a symlink to the
+% document
+\usepackage{cite}
+\usepackage{xcite} % set up external citations
+\usepackage{xr}
+\externalcitedocument{../main}
+
+\usepackage[parfill]{parskip} % For block paragraphs
+
+\definecolor{gray}{gray}{0.4}
+\newenvironment{reviewer}{\bf}{}
+
+\tcbset{skin=enhanced}
+
+\newenvironment{manuscript}[1]{\begin{center}\begin{tcolorbox}[colback=green!5!white,colframe=green!75!black,width=0.9\textwidth,title={#1},breakable,fonttitle=\bfseries]}{\end{tcolorbox}\end{center}}
+
+\newenvironment{todo}[1]{\begin{center}\begin{tcolorbox}[colback=red!5!white,colframe=red!75!black,width=0.9\textwidth,title={#1},breakable,fonttitle=\bfseries]}{\end{tcolorbox}\end{center}}
+
+
+\begin{document}
+\today\\
+
+{\itshape Name}\\
+Affil\\
+University\\
+Location\\
+
+{
+Editor Name, Editor\\
+Journal\\}
+
+Thank you for your email on DATE, inviting us to submit a revised version of our manuscript, ``TITLE'' (ID NO), for further review as a regular paper. We have addressed the reviewer's comments below.
+
+
+\hspace*{4.4in}Sincerely,
+
+%\hspace*{4.3in}\includegraphics[width=1.8in]{signature.pdf}
+
+\hspace*{4.4in}Name
+
+% Reviewer
+\section*{Reviewer \#2}
+\begin{reviewer}
+1. REVIEWER COMMENT
+\end{reviewer}
+
+The reviewer raises a good point. We have added a citation--note that we can directly refer to the main text of the paper!
+
+\begin{manuscript}{Section}
+Text from section \cite{Brown2010}.
+\end{manuscript}
+
+\begin{reviewer}
+2. REVIEWER COMMENT
+\end{reviewer}
+
+We do not expect this to matter. 
+
+
+\end{document}
+
+
