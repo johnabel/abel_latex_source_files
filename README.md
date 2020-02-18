@@ -3,7 +3,7 @@
 This repository contains several document formats that may be of use for using LaTeX. Contact abelj at mit dot edu for further information.
 The .gitignore file here may also be useful in conjunction with any of these repositories for tracking TeX projects on git.
 
-### manuscript_draft
+## manuscript_draft
 This repostory contains materials for drafting and submitting LaTeX manuscipts. It is set up to be ready to do for 
 
 ##### Paper sections
@@ -34,11 +34,11 @@ The references are currently formatted according to IEEE standards. Other `.bst`
 ##### Correspondence
 There are also form letters in here for cover letters and response letters. There are examples written in each which should help with use.
 
-### poster
+## poster
 Beamer poster format with MGH-appropriate coloring. Follow the readme in there for use. Uses pdflatex to compile.
 
-### slides
+## slides
 This contains a beamer slides format that heavily draws upon
 
-### cv
+## CV
 This contains a CV format in LaTeX. All sections are obviously optional. This exact version requires the font Avenir (exists on Mac). Other fonts may be specified within. To compile, do `xelatex my-cv.tex`. This is using a remarkably neat format borrowed from Liana Lareau at UC Berkeley.
