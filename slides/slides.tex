@@ -1,0 +1,858 @@
+\documentclass[11.5pt]{beamer}
+\usetheme{nasa}
+\metroset{block=fill}
+
+
+% for printing handouts
+%\documentclass[handout,12pt]{beamer}
+%\usepackage{pgfpages}
+%\usepackage{tikz}
+%\pgfpagesuselayout{4 on 1}[a4paper, landscape, border shrink=5mm]
+%\setbeamercolor{background canvas}{bg=white}
+%\setbeamercolor{normal text}{fg=black,bg=white}
+%\setbeamercolor{titlelike}{fg=black,bg=white}
+%\setbeamertemplate{frametitle}{\color{black}\bfseries\insertframetitle\par}
+%% end handouts
+
+
+
+% % %
+% J H Abel custom commands here. not in nasa theme so they can be used to
+% print slides
+% % %
+
+% a different kind of section
+\newcommand{\nasasection}[1]{
+    \metroset{background=dark}\section{#1}\metroset{background=light}
+}
+
+% font theme for math: serif
+\usefonttheme[onlymath]{serif}
+
+% fullpagegrphic command
+\newcommand<>{\fullpagegraphic}[2][1.0]{
+  \only#3{
+  \dimen1=#1\textwidth\relax
+  \dimen2=#1\textheight\relax
+  \dimen3=0.8\dimen2\relax
+  \begin{center}
+    \includegraphics[width=\dimen1,height=\dimen3,keepaspectratio]{#2}
+  \end{center}
+}}
+
+% footlineextra using tikz
+\newcommand{\footlineextra}[1]{
+    \begin{tikzpicture}[remember picture,overlay]
+        \node[yshift=2ex,anchor=south west] at (current page.south west) {\usebeamerfont{author in head/foot}\hspace{1ex}\tiny#1};
+    \end{tikzpicture}
+}
+% locations of figures
+\graphicspath{{./figures/}}
+
+% % %
+% End of preamble. set up the doc.
+% % %
+
+
+
+
+% title etc.
+\title{Neurobiology of Circadian Rhythms}
+\author[Abel - Harvard Medical School]{John Abel Ph.D.}
+\date{3 June 2019}
+\institute{
+Division of Sleep Medicine, Harvard Medical School\\
+Department of Anesthesiology, Massachusetts General Hospital\\
+Picower Institute for Learning and Memory, MIT}
+
+
+\begin{document}
+
+\metroset{background=dark}
+\maketitle
+\metroset{background=light}
+
+
+\begin{frame}{Learning objectives}
+\begin{enumerate}
+\item Learn the three essential charactertistics of circadian rhythms.\pause
+\item Understand how mammalian circadian rhythms are generated within a single cell and how these rhythms are coordinated.\pause
+\item Understand the signals exhanged within the hypothalamus, brain, and peripheral tissues.
+\end{enumerate}
+\end{frame}
+
+
+
+\begin{frame}{Outline}
+  \setbeamertemplate{section in toc}[sections numbered]
+  \tableofcontents[hideallsubsections]
+\end{frame}
+
+
+\nasasection{An Introduction to Circadian Rhythms}
+
+\begin{frame}{What are circadian rhythms?}
+    \begin{columns}
+    \column{0.5\textwidth}
+    \fullpagegraphic{cassia_corymbosa.jpg}
+    \footlineextra{\textit{Cassia corymbosa}, sketch by Darwin}
+
+    \column{0.5\textwidth}
+    \begin{itemize}
+        \item Endogenous, entrainable, near-24h oscillations in gene expression, metabolism, or behavior
+    \end{itemize}
+    \end{columns}
+\end{frame}
+\begin{frame}[noframenumbering]{What are circadian rhythms?}
+    \begin{columns}
+    \column{0.5\textwidth}
+    \fullpagegraphic{cassia_corymbosa.jpg}
+    \footlineextra{\textit{Cassia corymbosa}, sketch by Darwin}
+
+    \column{0.5\textwidth}
+    \begin{itemize}
+        \item {\bf Endogenous}, entrainable, near-24h oscillations in gene expression, metabolism, or behavior
+    \end{itemize}
+    \end{columns}
+\end{frame}
+\begin{frame}[noframenumbering]{What are circadian rhythms?}
+    \begin{columns}
+    \column{0.5\textwidth}
+    \fullpagegraphic{cassia_corymbosa.jpg}
+    \footlineextra{\textit{Cassia corymbosa}, sketch by Darwin}
+
+    \column{0.5\textwidth}
+    \begin{itemize}
+        \item Endogenous, {\bf entrainable}, near-24h oscillations in gene expression, metabolism, or behavior
+    \end{itemize}
+    \end{columns}
+\end{frame}
+\begin{frame}[noframenumbering]{What are circadian rhythms?}
+    \begin{columns}
+    \column{0.5\textwidth}
+    \fullpagegraphic{cassia_corymbosa.jpg}
+    \footlineextra{\textit{Cassia corymbosa}, sketch by Darwin}
+
+    \column{0.5\textwidth}
+    \begin{itemize}
+        \item Endogenous, entrainable, {\bf near-24h} oscillations in gene expression, metabolism, or behavior
+    \end{itemize}
+    \end{columns}
+\end{frame}
+\begin{frame}[noframenumbering]{What are circadian rhythms?}
+    \begin{columns}
+    \column{0.5\textwidth}
+    \fullpagegraphic{cassia_corymbosa.jpg}
+    \footlineextra{\textit{Cassia corymbosa}, sketch by Darwin}
+
+    \column{0.5\textwidth}
+    \begin{itemize}
+        \item Endogenous, entrainable, near-24h oscillations in gene expression, metabolism, or behavior
+        \item (\bf{temperature-compensated})
+    \end{itemize}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Circadian rhythms are ubiquitous}
+    \fullpagegraphic{cyano.JPG}
+    \footlineextra{Wikimedia Commons}
+\end{frame}
+\begin{frame}{Circadian rhythms are ubiquitous}
+    \fullpagegraphic{konopka1972.png}
+    \footlineextra{Konopka and Benzer PNAS 1972}
+\end{frame}
+\begin{frame}{Circadian rhythms are ubiquitous}
+    \footlineextra{(L) van der Horst \textit{at al.} Nature 1999, (R) Takahashi Nat Rev Genet 2017}
+    \begin{columns}
+        \column{0.4\textwidth}
+    \fullpagegraphic{vanderhorst.png}
+    \pause
+    \column{0.6\textwidth}
+        \fullpagegraphic{circadian_landscape.png}
+    \end{columns}
+\end{frame}
+
+
+% where do these rhythms come from? how are they so similar?
+\nasasection{The Master Clock Hypothesis}
+
+
+\begin{frame}{Physiology of the suprachiasmatic nucleus (SCN)}
+\footlineextra{fig: Alila Medical Media}
+
+\begin{columns}
+\column{0.5\textwidth}
+\fullpagegraphic{alila.png}
+\column{0.5\textwidth}
+\begin{itemize}
+\item located in the hypothalamus
+\item bilateral of the 3rd ventricle
+\item ventral SCN receives light inputs from retinohypothalamic tract
+(RHT)
+\end{itemize}
+\end{columns}
+\end{frame}
+
+
+\begin{frame}{Evidence for SCN role in circadian behavior}
+\footlineextra{Stephan and Zucker PNAS 1972}
+
+SCN lesioning eliminates behavioral rhythms drinking in
+rats.
+
+\fullpagegraphic{stephan_zucker.png}
+\end{frame}
+
+
+\begin{frame}{SCN transplants determine circadian period}
+    \footlineextra{Ralph \textit{et al.} Science 1990}
+
+    \vspace{-1cm}
+    \fullpagegraphic{transplant.png}
+\end{frame}
+
+
+\begin{frame}{The master clock}
+``Master clock'' hypothesis: SCN keeps time and drives rhythms in other neural and peripheral tissue.
+
+\fullpagegraphic{melatonin.png}
+\footlineextra{Czeisler \textit{et al.} NEJM 1995}
+
+\end{frame}
+
+
+\begin{frame}{The oscillator in the SCN is cell-autonomous}
+\footlineextra{Welsh \textit{at al.} Neuron 1995}
+
+\vspace{-1cm}
+\fullpagegraphic{welsh1995.png}
+\end{frame}
+
+\begin{frame}
+
+{\huge Where do these oscillations originate?}\\[1em]
+To answer this question, we need to look at the contemporary non-mammalian research.
+\end{frame}
+
+\nasasection{The Genetic Oscillator and the Master Pacemaker Hypothesis}
+
+
+\begin{frame}{Circadian rhythms in drosophila}
+    \fullpagegraphic{konopka1972.png}
+    \footlineextra{Konopka and Benzer PNAS 1972}
+\end{frame}
+
+
+\begin{frame}{Genetic origins of mammalian circadian rhythm}
+    \begin{columns}
+    \column{0.4\textwidth}
+    1990s: Identification and cloning of the \textit{CLOCK} gene in mammals
+    \column{0.6\textwidth}
+    \fullpagegraphic{vitaterna.png}
+    \end{columns}
+    \footlineextra{Vitaterna \textit{et al.} 1994}
+\end{frame}
+
+
+\begin{frame}{Genetic origins of mammalian circadian rhythm}
+    How can a genetic circuit drive oscillatory gene expression? What about other non-transcriptional mechanisms, like those in cyanobacteria?
+\end{frame}
+
+
+\begin{frame}{Biological feedback loops drive oscillation}
+    \fullpagegraphic{loop0.png}
+    \footlineextra{Example: a highly simplified genetic feedback loop.}
+\end{frame}
+\begin{frame}[noframenumbering]{Biological feedback loops drive oscillation}
+    \fullpagegraphic{loop1.png}
+    \footlineextra{Example: a highly simplified genetic feedback loop.}
+\end{frame}
+\begin{frame}[noframenumbering]{Biological feedback loops drive oscillation}
+    \fullpagegraphic{loop2.png}
+    \footlineextra{Example: a highly simplified genetic feedback loop.}
+\end{frame}
+\begin{frame}[noframenumbering]{Biological feedback loops drive oscillation}
+    \fullpagegraphic{loop3.png}
+    \footlineextra{Example: a highly simplified genetic feedback loop.}
+\end{frame}
+\begin{frame}[noframenumbering]{Biological feedback loops drive oscillation}
+    \fullpagegraphic{loop4.png}
+    \footlineextra{Example: a highly simplified genetic feedback loop.}
+\end{frame}
+\begin{frame}[noframenumbering]{Biological feedback loops drive oscillation}
+    \fullpagegraphic{loop5.png}
+    \footlineextra{Example: a highly simplified genetic feedback loop.}
+\end{frame}
+
+
+\begin{frame}{Mathematical structure of a circadian oscillator}
+    \begin{columns}
+    \column{0.5\textwidth}
+    Biochemical states $x(t)$ are governed by dynamics:
+    \begin{equation*}
+        \frac{dx}{dt} = f(x, p, u).
+    \end{equation*}
+    \pause
+
+    \vfill
+    The system has an $n$-dimensional attractive limit cycle, meaning
+    \begin{equation*}
+        \lim_{t\to\infty}[x(t) - x(t-T)]=0,
+    \end{equation*}
+
+    period: $T$\pause
+    \column{0.5\textwidth}
+    \fullpagegraphic{state_space.pdf}
+    \footlineextra{Fig: PC St.\ John}
+    \end{columns}
+\end{frame}
+
+
+\begin{frame}{Limit cycle phase responses}
+    A perturbation shifts the oscillator away from the limit cycle.
+
+    \fullpagegraphic{phase_response0.pdf}
+\end{frame}
+\begin{frame}[noframenumbering]{Limit cycle phase responses}
+    A perturbation shifts the oscillator away from the limit cycle.
+
+    \fullpagegraphic{phase_response1.pdf}
+\end{frame}
+\begin{frame}[noframenumbering]{Limit cycle phase responses}
+    System dynamics govern its eventual return.
+
+    \fullpagegraphic{phase_response2.pdf}
+\end{frame}
+\begin{frame}[noframenumbering]{Limit cycle phase responses}
+    The oscillator returns to the cycle with a new phase (advance).
+
+    \fullpagegraphic{phase_response3.pdf}
+\end{frame}
+
+\begin{frame}{Phase response curves (PRCs)}
+
+    Describes how the system responds to a perturbation of a certain strength and duration applied at each phase.
+
+    \begin{center}
+    \includegraphics[height=2.5in]{humanprc.png}
+\end{center}
+
+    \footlineextra{Kronauer, Forger, Jewett, J Biol Rhythms 1999}
+\end{frame}
+
+
+\begin{frame}{Evidence for a physical limit cycle underlying\\
+circadian oscillation}
+    \begin{enumerate}[<+->]
+    \item Self-sustained oscillation
+    \item Amplitude dynamics
+    \item Phase shifts following perturbation
+    \item Gene networks mimic mathematical structure
+    \end{enumerate}
+\end{frame}
+
+
+\begin{frame}{Structure of the\\ mammalian genetic\\ oscillator}
+
+\begin{columns}
+\column{0.3\textwidth}
+\column{0.7\textwidth}
+\vspace{-1.5cm}
+\includegraphics[height=\textheight]{full_network.png}
+\end{columns}
+
+\footlineextra{Takahashi Nat Rev Genet 2017}
+\end{frame}
+
+
+\begin{frame}{Structure of the\\ mammalian genetic\\ oscillator}
+
+\begin{columns}
+\column{0.3\textwidth}
+\column{0.7\textwidth}
+\vspace{-1.5cm}
+\includegraphics[height=\textheight]{negative.png}
+\end{columns}
+
+\footlineextra{Takahashi Nat Rev Genet 2017}
+\end{frame}
+
+
+\begin{frame}{Structure of the\\ mammalian genetic\\ oscillator}
+
+\begin{columns}
+\column{0.3\textwidth}
+\column{0.7\textwidth}
+\vspace{-1.5cm}
+\includegraphics[height=\textheight]{positive.png}
+\end{columns}
+
+\footlineextra{Takahashi Nat Rev Genet 2017}
+\end{frame}
+
+
+\begin{frame}{Structure of the\\ mammalian genetic\\ oscillator}
+
+\begin{columns}
+\column{0.3\textwidth}
+\column{0.7\textwidth}
+\vspace{-1.5cm}
+\includegraphics[height=\textheight]{outputs.png}
+\end{columns}
+
+\footlineextra{Takahashi Nat Rev Genet 2017}
+\end{frame}
+
+
+\begin{frame}{Local oscillators regulate metabolic processes}
+
+\includegraphics[height=0.7\textheight]{metabolismmeter.png}
+
+Deep integration of circadian regulation with cellular metabolism.
+
+\footlineextra{Green, Takahashi, and Bass, Cell 2008}
+\end{frame}
+
+
+\begin{frame}{Local oscillators regulate metabolic processes}
+
+\fullpagegraphic{circadian_landscape.png}
+
+10-20\% of all transcripts under circadian regulation.
+
+\footlineextra{Takahashi Nat Rev Genet 2017}
+\end{frame}
+
+
+\begin{frame}{Recording from biological feedback loops}
+    \fullpagegraphic{biolumfeedback_loop.png}
+    \footlineextra{Yoo \textit{et al.} PNAS 2004}
+\end{frame}
+
+
+\begin{frame}{Luciferase reporter shows clock is deeply integrated in metabolism}
+
+\fullpagegraphic{zhang_rnai.png}
+
+
+\footlineextra{Zhang \textit{et al.} Cell 2009}
+\end{frame}
+
+
+\begin{frame}{PER2::Luc reporter and the master clock hypothesis}
+    \fullpagegraphic{per2luc.png}
+    \footlineextra{Yoo \textit{et al.} PNAS 2004}
+\end{frame}
+
+
+\begin{frame}{Revisiting understanding of the SCN role}
+    \fullpagegraphic{per2luc2.png}
+    \footlineextra{Yoo \textit{et al.} PNAS 2004}
+\end{frame}
+
+
+\begin{frame}{Master clock vs. master pacemaker}
+    
+    Yoo \textit{et al.} provided evidence \textbf{against} the master clock hypothesis--there are many clocks.\\[1em]
+    \pause
+
+    Now, the SCN appears to be a ``master pacemaker,'' setting the time and coordinating peripheral oscillators in local tissue.
+\end{frame}
+
+
+\begin{frame}{Full SCN tissue sustains synchronized rhythms}
+    \fullpagegraphic{scn.png}
+    \footlineextra{Herzog \textit{et al.} Meth Enzymol 2015}
+
+\end{frame}
+
+
+\begin{frame}{Full SCN tissue sustains rhythms}
+    \fullpagegraphic{sync.png}
+    \footlineextra{Herzog \textit{et al.} Meth Enzymol 2015}
+
+\end{frame}
+
+
+
+\begin{frame}{Neural oscillators must communicate to be effective}
+    \fullpagegraphic{herzog2004c.png}
+    \footlineextra{Herzog \textit{et al.} J Biol Rhythms 2004}
+
+    \pause
+    If intercellular communication is interrupted, oscillators lose synchrony and amplitude.
+
+\end{frame}
+
+
+\begin{frame}
+    Peripheral tissues must receive input to remain aligned to the SCN.\\\pause
+    Neurons must exchange signals to remain synchronized.\\\pause
+    The SCN must receive input to remain aligned to the environment.\pause\\[1em]
+
+    {\huge How are these processes coordinated across cells and tissues?}
+\end{frame}
+
+
+
+\nasasection{Circadian Signals Inside the SCN}
+
+
+
+
+\begin{frame}{Basics of neurotransmission}
+    \fullpagegraphic{nts.jpg}
+    \footlineextra{Fig: NIH}
+\end{frame}
+
+
+\begin{frame}{Neural signals: terminology and review}
+Inhibitory: signal makes a neuron less likely to fire\\
+Excitatory: signal makes a neuron more likely to fire\\[1em]
+
+
+\textbf{Ionotropic} neurotransmitters cause immediate inhibitory or
+excitatory input.\\
+\textbf{Metabotropic} neurotransmitters affect the cell
+metabolism, and can be inputs to the circadian clock to affect
+oscillation.
+\end{frame}
+
+\begin{frame}{Pathways of neurotransmission in the SCN}
+
+    \begin{columns}
+    \column{0.6\textwidth}
+    \fullpagegraphic{allsignals.png}
+
+    \column{0.4\textwidth}
+    \begin{itemize}
+        \item Firing drives release of metabotropic neurotransmitters
+        \item Neurotransmitters modulate circadian transcription via CREB
+    \end{itemize}
+
+    \end{columns}
+
+    \footlineextra{Welsh, Takahashi, Kay Annu Rev Physiol 2010}
+\end{frame}
+
+
+\begin{frame}{Spatial organization of the SCN}
+\fullpagegraphic{SCN_localization.png}
+
+\footlineextra{Moore and Silver Chronobiol Int 1998}
+
+\end{frame}
+
+
+\begin{frame}{Question: which neurons are implicated in synchrony?}
+    \footlineextra{Abel \textit{et al.} PNAS 2016}
+
+    \vspace{-1cm}
+    Experiment: block electrical firing, wait for desynchrony, allow to resynchronize. Infer connectivity with mutual information.
+    \pause
+
+    \begin{columns}
+        \column{0.3\textwidth}
+
+        \fullpagegraphic{luminescent.png}
+
+        PER2::LUC SCN
+        
+        \small{collaborator: Daniel Granados-Fuentes, Herzog lab}\pause
+        \column{0.7\textwidth}
+        \fullpagegraphic{resync.png}
+
+    \end{columns}
+
+
+\end{frame}
+
+\begin{frame}{Structure of the SCN network}
+    \footlineextra{Abel \textit{et al.} PNAS 2016}
+
+    \begin{center}
+        \includegraphics[height=1.5in]{fig5_new.pdf}
+    \end{center}
+
+    Small-world, bilateral symmetric, with hubs located in SCN central regions.\\\pause
+    This does not perfectly correlate to a single known distribution of neurotransmitter release. Which are involved?
+
+\end{frame}
+
+
+\begin{frame}{The role of VIP neurons in synchrony and entrainment}
+    \footlineextra{Aton \textit{et al}. Nat Neurosci 2005}
+    \begin{columns}
+        \column{0.5\textwidth}
+        One pathway likely driving this synchrony is VIP.\\[0.5em]
+
+        \pause
+
+    It is unknown how VIP is released endogenously, and how this is dependent upon electrical activity.
+    \column{0.5\textwidth}
+
+    \pause
+    \fullpagegraphic{VIP.png}
+    \end{columns}
+\end{frame}
+
+
+\begin{frame}{The role of VIP neurons in synchrony and entrainment}
+    \footlineextra{Aton \textit{et al}. Nat Neurosci 2005}
+    \begin{columns}
+        \column{0.5\textwidth}
+        One pathway likely driving this synchrony is VIP.\\[0.5em]
+
+
+    It is unknown how VIP is released endogenously, and how this is dependent upon electrical activity.
+    \column{0.5\textwidth}
+
+    \fullpagegraphic{vpac2r_agonist.png}
+    \end{columns}
+\end{frame}
+
+
+\begin{frame}{Study design: investigating role of VIP, electrical neurotransmission, and synchrony}
+
+    \begin{enumerate}[<+->]
+        \item Identify firing patterns in the SCN.
+        \item Apply those patterns to VIP neurons via optogenetic stimulation.
+        \item Characterize VIP release and circadian response.
+    \end{enumerate}
+
+    \footlineextra{Mazuski, Abel, Chen, Hermanstyne, Doyle, and Herzog, Neuron 2018}
+\end{frame}
+
+\begin{frame}{Recording from VIP and non-VIP SCN neurons}
+
+        \includegraphics[height=1.2in]{expt_setup.png}\\\pause
+        \includegraphics[height=1.2in]{expt_record.png}
+
+    \footlineextra{Mazuski, Abel, ..., Doyle, and Herzog, Neuron 2018}
+\end{frame}
+
+
+\begin{frame}{Identifying firing patterns in the SCN}
+
+        \fullpagegraphic{mazuski2.png}
+
+    \footlineextra{Mazuski, Abel, ..., Doyle, and Herzog, Neuron 2018}
+\end{frame}
+
+\begin{frame}{Optogenetic stimulation triggers VIP release in a frequency-dependent fashion}
+
+    \begin{columns}
+        \column{0.5\textwidth}
+    Apply optogenetic stimulation with constant rate at variable instantaneous frequency.\pause
+
+    \fullpagegraphic{Figure3a.png}\pause
+
+    \column{0.5\textwidth}
+    VIP antagonist eliminates phase shift.
+
+    \fullpagegraphic{Figure3c.png}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Optogenetic stimulation of VIP neurons entrains circadian behavior in vivo via phase delays}
+    \fullpagegraphic{entrainment.png}
+    \footlineextra{Mazuski, Abel, ..., Doyle, and Herzog, Neuron 2018}
+
+\end{frame}
+
+
+\begin{frame}{A new potential tool: Cre-inducible color-switching}
+
+\fullpagegraphic{iamging.png}
+
+\footlineextra{Shan, Abel,..., Doyle III, Takahashi in revision}
+\end{frame}
+
+
+\begin{frame}{The roles of VIP and AVP in the SCN}
+
+\fullpagegraphic{avpbmal.png}
+
+\footlineextra{Shan, Abel,..., Doyle III, Takahashi in revision}
+\end{frame}
+
+
+\begin{frame}{The roles of VIP and AVP in the SCN}
+
+\fullpagegraphic{vipbmal.png}
+
+\footlineextra{Shan, Abel,..., Doyle III, Takahashi in revision}
+\end{frame}
+
+
+\begin{frame}{Neurotransmission in the SCN}
+    \begin{enumerate}
+        \item Neurotransmission in the SCN relies on the confluence of numerous pathways and processes. 
+            \begin{itemize}
+                \item The central SCN is of importance within the network. \pause
+                \item VIP primarily evokes phase delays.\pause
+                \item New evidence suggests clocks in AVP neurons are essential for synchrony \pause
+                \item Neuropeptide release depends on electrical activity.\pause
+            \end{itemize}
+        \item Electrical activity: a fundamental component of the oscillator
+    \end{enumerate}
+\end{frame}
+
+
+
+
+\begin{frame}
+
+{\huge How does the SCN integrate environmnetal signals and coordinate peripheral tissues?}
+\end{frame}
+
+\nasasection{Circadian Signals Outside the SCN}
+
+
+\begin{frame}{Entrainment to light}
+
+\begin{columns}
+\column{0.5\textwidth}
+Entrainment: the synchronization of biological processes to an external rhythm\pause
+\column{0.5\textwidth}
+\fullpagegraphic{robynhall.png}
+\end{columns}
+
+\footlineextra{fig: Robyn Hall, Twitter}
+\end{frame}
+
+\begin{frame}{Entrainment to light: physiology}
+\begin{columns}
+\column{0.4\textwidth}
+{\small Melanopsin in intrinsically photosensitive retinal ganglion cells
+(ipRGCs) responds to light, signal transmitted down RHT.}
+\column{0.6\textwidth}
+\fullpagegraphic{iprgcs.png}
+\end{columns}
+
+
+\end{frame}
+
+
+\begin{frame}{Entrainment to light: process}
+\begin{columns}
+\column{0.5\textwidth}
+\begin{enumerate}
+\item Light is received by ipRGCs\pause
+\item ipRCGs fire, signal transmitted down RHT\pause
+\item Glutamate release triggers SCN neuron firing\pause
+\item Neurotransmitters and neuropeptides of the SCN cause phase shifts (via CREB)\pause
+\end{enumerate}
+\column{0.5\textwidth}
+\fullpagegraphic{SCNbrain.png}
+\end{columns}
+\end{frame}
+
+
+\begin{frame}{Neural signals to peripheral tissue}
+\begin{columns}
+\column{0.3\textwidth}
+{\small SCN connects to other brain regions, which use hormones,
+temperature, neural signals to keep rest of body synchronized with
+the SCN.}
+\column{0.7\textwidth}
+\fullpagegraphic{levi2010}
+\end{columns}
+\end{frame}
+
+
+\begin{frame}{Feeding as an entraining factor}
+Oscillators in the tissue such as the liver may be entrained and
+synchronized by timing of feeding.
+
+\begin{center}
+\includegraphics[height=3cm]{liverclocks.png}
+\end{center}
+
+\footlineextra{Vujovic, Davidson, Menaker Am J Physiol Regul Integr Comp Physiol 2008}
+
+\end{frame}
+
+
+\begin{frame}{Feeding as an entraining factor: local master regulators}
+
+\fullpagegraphic{activity-red-green.png}
+
+\footlineextra{Shan, Abel,..., Doyle III, Takahashi in prep}
+\end{frame}
+
+
+\begin{frame}{Everything can be seen as a closed loop}
+\fullpagegraphic{summary.png}
+\footlineextra{Takahashi Nat Rev Genet 2017}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Neurobiological hierarchy of circadian rhythm}
+\fullpagegraphic{summary_hastings.png}
+
+\footlineextra{Hastings \textit{et al.} Nat Rev Neurosci 2018}
+\end{frame}
+
+
+\begin{frame}[noframenumbering]
+    \frametitle{Acknowledgments: Formal Affiliations}
+    {\footnotesize
+    \begin{columns}
+        \column{0.5\textwidth}
+        {\it Collaborators}
+
+    Prof. Erik Herzog (WUSTL)\\
+    Prof. Joseph Takahashi (UTSW)\\
+    Dr. Cristina Mazuski\\
+    Dr. Daniel Granados-Fuentes\\
+    Dr. Yongli Shan
+
+    \column{0.5\textwidth}
+    {\it Advisors}
+
+    Prof. Frank Doyle (Harvard)\\
+    Prof. Linda Petzold (UCSB)\\
+    Prof. Elizabeth Klerman (HMS/BWH)
+    \end{columns}
+
+    \vspace{0.3cm}
+
+    \begin{columns}
+        \column{0.45\textwidth}
+    Doyle lab, Harvard University\\
+    \includegraphics[height = 3.cm]{doylelab.jpg}
+
+    \column{0.5\textwidth}
+    AMU, Brigham and Women's Hospital\\
+    \includegraphics[height = 3.cm]{amu.jpg}
+    \end{columns}
+
+    \vfill
+    {\it Funding and affiliations:}\hspace{0.5cm}
+    \includegraphics[height=1cm]{nih.png}\hspace{0.5cm}
+    \includegraphics[height=1cm]{hms.png}\hspace{0.5cm}
+    \includegraphics[height=1cm]{bwh.png}\\
+    \scriptsize{NIH T32-HLO7901, Training Program in Sleep, Circadian, \& Respiratory Neurobiology}}
+\end{frame}
+
+
+\metroset{background=dark}
+\begin{frame}[noframenumbering]
+    \emph{\bf{\huge{Open questions?}}}
+\end{frame}
+\metroset{background=light}
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
