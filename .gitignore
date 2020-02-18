@@ -18,6 +18,8 @@
 *.lot
 *.fls
 *.fdb_latexmk
+*.nav
+*.snm
 *.maf
 *.mtc
 *.mtc1

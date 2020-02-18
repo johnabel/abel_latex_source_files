@@ -34,6 +34,11 @@ The references are currently formatted according to IEEE standards. Other `.bst`
 ##### Correspondence
 There are also form letters in here for cover letters and response letters. There are examples written in each which should help with use.
 
-### cv
+### poster
+Beamer poster format with MGH-appropriate coloring. Follow the readme in there for use. Uses pdflatex to compile.
 
+### slides
+This contains a beamer slides format that heavily draws upon
+
+### cv
 This contains a CV format in LaTeX. All sections are obviously optional. This exact version requires the font Avenir (exists on Mac). Other fonts may be specified within. To compile, do `xelatex my-cv.tex`. This is using a remarkably neat format borrowed from Liana Lareau at UC Berkeley.

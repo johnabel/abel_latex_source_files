@@ -1,0 +1,111 @@
+\documentclass{beamer}
+\usepackage[orientation=landscape,width=48in,height=36in,scale=1.4,debug]{beamerposter}
+\mode<presentation>{\usetheme{MGH}}
+\usepackage[scaled]{helvet}
+\usepackage{chemformula}
+\usepackage{siunitx} %pretty measurement unit rendering
+\usepackage{ragged2e}
+\usepackage[font=scriptsize,justification=justified]{caption}
+\usepackage{array,booktabs,tabularx}
+
+\newcommand<>{\fullpagegraphic}[2][1.0]{
+  \only#3{
+  \dimen1=#1\textwidth\relax
+  \dimen2=#1\textheight\relax
+  \dimen3=0.8\dimen2\relax
+  \begin{center}
+    \includegraphics[width=\dimen1,height=\dimen3,keepaspectratio]{#2}
+  \end{center}
+}}
+
+\usepackage{tcolorbox}
+\tcbuselibrary{breakable}
+\tcbuselibrary{skins}
+\newenvironment{examplebox}[1]{\begin{center}\begin{tcolorbox}[colback=green!5!white,colframe=green!75!black,width=\textwidth,title={#1},breakable,fonttitle=\color{black}\small]}{\end{tcolorbox}\end{center}}
+
+\renewcommand{\baselinestretch}{0.8}
+
+\title{\textbf{\LARGE TITLE}}
+\author{Author List}
+\institute[MIT]{Affiliations List}
+\date{ }
+
+% edit this depending on how tall your header is. We should make this scaling automatic :-/
+\newlength{\columnheight}
+\setlength{\columnheight}{69cm}
+
+\begin{document}
+\begin{frame}
+\begin{columns}
+	\column{0.25\textwidth}
+		\begin{beamercolorbox}[center]{postercolumn}
+			\begin{minipage}{.98\textwidth}  % tweaks the width, makes a new \textwidth
+				\parbox[t][\columnheight]{\textwidth}{ % must be some better way to set the height, width and textwidth simultaneously
+					\begin{myblock}{Abstract}
+						{\footnotesize 
+		Lorem ipsum
+						}
+						\begin{examplebox}{Research questions and aims}
+											{\small\color{black}
+						\begin{enumerate}
+							\item What role do AVP neurons play in SCN communication?\\[0.5em]
+							\item How do AVP and VIP pathways interact?\\[0.5em]
+							\item Develop experimental and computational techniques for analyzing cell-type-specific circadian oscillation.
+						\end{enumerate}
+					}
+					\end{examplebox}
+					\end{myblock}
+
+					\begin{myblock}{Color-switching PER2::iLUC reporter}
+						
+					\end{myblock}
+					\vfill
+					}
+			\end{minipage}
+		\end{beamercolorbox}
+
+	\column{0.5\textwidth}
+		\begin{beamercolorbox}[center]{postercolumn}
+			\begin{minipage}{.98\textwidth}  % tweaks the width, makes a new \textwidth
+				\parbox[t][\columnheight]{\textwidth}{ % must be some better way to set the height, width and textwidth simultaneously
+					\begin{myblock}{Computational analysis of cellular circadian oscillation}
+						
+					\end{myblock}\vfill
+					}
+			\end{minipage}
+		\end{beamercolorbox}
+
+	\column{0.25\textwidth}
+			\begin{beamercolorbox}[center]{postercolumn}
+			\begin{minipage}{.98\textwidth}  % tweaks the width, makes a new \textwidth
+				\parbox[t][\columnheight]{\textwidth}{ 
+				% must be some better way to set the height, width and textwidth simultaneously
+				
+					\begin{myblock}{Proposed mechanism of AVP-VIP signaling}
+
+					\end{myblock}
+
+					\begin{myblock}{Conclusions}
+
+					\end{myblock}
+
+					\begin{myblock}{References and acknowledgement}
+						{\footnotesize
+							\begin{enumerate}
+								\item Example
+						\end{enumerate}
+
+						{\small
+					Research was supported by NIH training award T32-HLO9701 (JHA), the Howard Hughes Medical Institute (JST), and NIH/NINDS grant R01 NS106657 (JST).
+					}
+						}
+					\end{myblock}\vfill
+					}
+
+					
+			\end{minipage}
+		\end{beamercolorbox}
+
+\end{columns}
+\end{frame}
+\end{document}
