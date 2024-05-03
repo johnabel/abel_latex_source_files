@@ -1,6 +1,6 @@
-# JH Abel's LaTeX Source Files
+# LaTeX Source Files
 
-This repository contains several document formats that may be of use for using LaTeX. Contact abelj at mit dot edu for further information.
+This repository contains several document formats that may be of use for using LaTeX. Contact jhabel01 at gmail dot com for further information.
 The .gitignore file here may also be useful in conjunction with any of these repositories for tracking TeX projects on git.
 
 ## manuscript_draft
